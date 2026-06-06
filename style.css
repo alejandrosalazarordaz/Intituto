@@ -149,6 +149,8 @@ button:hover {
   border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
 }
 
 .card:hover {
@@ -165,6 +167,25 @@ button:hover {
 .card p {
   text-align: left;
   margin: 0;
+  flex-grow: 1;
+}
+
+.blog-btn {
+  display: inline-block;
+  margin-top: 1.5rem;
+  background: #667eea;
+  color: white;
+  padding: 0.7rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  text-align: center;
+  transition: background 0.3s;
+  align-self: flex-start;
+}
+
+.blog-btn:hover {
+  background: #764ba2;
 }
 
 .lista {
@@ -209,6 +230,70 @@ form button {
   font-weight: bold;
 }
 
+/* Blog Post Styles */
+.blog-post {
+  padding: 3rem 2rem;
+  background: #f8f9fa;
+  min-height: 100vh;
+}
+
+.blog-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  padding: 3rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.back-link {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 2rem;
+  transition: color 0.3s;
+}
+
+.back-link:hover {
+  color: #764ba2;
+}
+
+.blog-post article h1 {
+  font-size: 2.5rem;
+  color: #667eea;
+  margin-bottom: 2rem;
+  line-height: 1.2;
+}
+
+.blog-post article p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  text-align: justify;
+  color: #333;
+}
+
+.blog-actions {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.back-btn {
+  display: inline-block;
+  background: #667eea;
+  color: white;
+  padding: 0.8rem 2rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.back-btn:hover {
+  background: #764ba2;
+}
+
 footer {
   background: #333;
   color: white;
@@ -246,5 +331,13 @@ footer {
 
   .cards {
     grid-template-columns: 1fr;
+  }
+
+  .blog-container {
+    padding: 1.5rem;
+  }
+
+  .blog-post article h1 {
+    font-size: 1.8rem;
   }
 }
