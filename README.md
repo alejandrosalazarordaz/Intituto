@@ -8,6 +8,9 @@
 </head>
 <body>
 
+sto: te edité solo el header para que también aparezcan tus redes sociales (Facebook e Instagram) igual que en la página principal.
+
+✅ HEADER CORREGIDO
 <header>
   <div class="logo">
     <h1>Instituto de Monterrey</h1>
@@ -16,19 +19,34 @@
 
   <nav>
     <ul>
-      <li><a href="#inicio">Inicio</a></li>
-      <li><a href="#filosofia">Filosofía</a></li>
-      <li><a href="#historia">Historia</a></li>
-      <li><a href="#nosotros">Nosotros</a></li>
-      <li><a href="#oferta">Oferta Educativa</a></li>
-      <li><a href="#inscripcion">Inscripción</a></li>
-      <li><a href="#pago">Colegiaturas</a></li>
-      <li><a href="#contacto">Contacto</a></li>
-      <li><a href="#ubicacion">Ubicación</a></li>
-      <li><a href="#instalaciones">Instalaciones</a></li>
-      <li><a href="#blog">Blog</a></li>
+      <li><a href="index.html#inicio">Inicio</a></li>
+      <li><a href="index.html#filosofia">Filosofía</a></li>
+      <li><a href="index.html#historia">Historia</a></li>
+      <li><a href="index.html#nosotros">Nosotros</a></li>
+      <li><a href="index.html#oferta">Oferta Educativa</a></li>
+      <li><a href="index.html#inscripcion">Inscripción</a></li>
+      <li><a href="index.html#pago">Colegiaturas</a></li>
+      <li><a href="index.html#contacto">Contacto</a></li>
+      <li><a href="index.html#ubicacion">Ubicación</a></li>
+      <li><a href="index.html#instalaciones">Instalaciones</a></li>
+      <li><a href="index.html#blog">Blog</a></li>    
     </ul>
   </nav>
+
+  <!-- REDES SOCIALES -->
+  <div class="social-header">
+    <a href="https://www.facebook.com/p/Instituto-Monterrey-61575657606439/?locale=es_LA"
+       target="_blank"
+       aria-label="Facebook">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+
+    <a href="https://www.instagram.com/p/DXHOxuhiXYN/"
+       target="_blank"
+       aria-label="Instagram">
+      <i class="fab fa-instagram"></i>
+    </a>
+  </div>
 </header>
 
 <section class="hero" id="inicio">
