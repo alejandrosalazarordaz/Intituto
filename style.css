@@ -338,3 +338,27 @@ footer {
     font-size: 1.8rem;
   }
 }
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 25px;
+}
+
+.social-links {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.social-links a {
+  color: white;
+  font-size: 28px;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.social-links a:hover {
+  transform: scale(1.2);
+}
