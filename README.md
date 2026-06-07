@@ -1,59 +1,224 @@
-# Instituto de Monterrey - Kid's College
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instituto de Monterrey - Kid's College</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-Sitio web oficial del Instituto de Monterrey - Kid's College, una institución educativa enfocada en el desarrollo integral de los niños.
+<header>
+  <div class="logo">
+    <h1>Instituto de Monterrey</h1>
+    <p>Kid's College</p>
+  </div>
 
-## Características
+  <nav>
+    <ul>
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#filosofia">Filosofía</a></li>
+      <li><a href="#historia">Historia</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#oferta">Oferta Educativa</a></li>
+      <li><a href="#inscripcion">Inscripción</a></li>
+      <li><a href="#pago">Colegiaturas</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+      <li><a href="#ubicacion">Ubicación</a></li>
+      <li><a href="#instalaciones">Instalaciones</a></li>
+      <li><a href="#blog">Blog</a></li>
+    </ul>
+  </nav>
+</header>
 
-- ✨ Diseño responsive y moderno
-- 📱 Optimizado para dispositivos móviles
-- 🎨 Interfaz profesional e intuitiva
-- 🔧 Fácil de personalizar y mantener
-- 📝 Secciones completas de información institucional
-- 📧 Formulario de contacto funcional
+<section class="hero" id="inicio">
+  <div class="overlay">
+    <h2>Educación centrada en el niño</h2>
+    <p>
+      Desarrollamos las capacidades reales e innatas de cada niño
+      mediante una educación constructiva y humana.
+    </p>
+    <button id="btnInfo">Conocer más</button>
+  </div>
+</section>
 
-## Secciones del Sitio
+<section id="nosotros" class="section">
+  <h2>Nosotros</h2>
 
-- **Inicio**: Presentación principal
-- **Nosotros**: Información sobre la institución
-- **Filosofía Institucional**: Misión, Visión y Valores
-- **Historia**: Trasfondo de Kid's College
-- **Oferta Educativa**: Programas disponibles
-- **Inscripción**: Información de inscripciones
-- **Colegiaturas**: Información de pagos
-- **Instalaciones**: Descripción de espacios
-- **Blog**: Artículos y noticias
-- **Ubicación**: Localización del instituto
-- **Contacto**: Formulario para comunicarse
+  <p>
+    Instituto de Monterrey - Kid's College se inicia con el firme propósito
+    de brindar a las familias la mejor alternativa en educación y cuidado
+    para sus hijos.
+  </p>
 
-## Instalación y Uso
+  <p>
+    Una educación enfocada en las capacidades reales e innatas del niño,
+    donde a través de un ambiente preparado y personal especializado puede
+    llegar a su completo desarrollo, conectándolo con su entorno y
+    facilitándole situaciones de aprendizaje que activen su natural deseo
+    de aprender.
+  </p>
 
-1. Clona el repositorio
-2. Abre `index.html` en tu navegador
-3. O despliega en GitHub Pages para tenerlo en línea
+  <p>
+    Esto lo conseguimos viviendo día a día una educación constructiva
+    centrada en el niño.
+  </p>
 
-## Despliegue en GitHub Pages
+  <p>
+    Nuestro kínder cobija niños que piensan, crean y descubren el mundo
+    con sus propias capacidades y con la alegría de hacerlo por sí mismos.
+  </p>
+</section>
 
-1. Ve a Settings → Pages
-2. Selecciona `main` branch como fuente
-3. Tu sitio estará disponible en: `https://tu-usuario.github.io/Intituto/`
+<section id="filosofia" class="section gray">
+  <h2>Filosofía Institucional</h2>
 
-## Personalización
+  <div class="cards">
+    <div class="card">
+      <h3>Misión</h3>
+      <p>
+        Formar niños seguros, creativos y autónomos mediante una educación
+        integral centrada en sus capacidades.
+      </p>
+    </div>
 
-Puedes personalizar fácilmente:
-- Colores en `style.css`
-- Contenido en `index.html`
-- Funcionalidad en `script.js`
+    <div class="card">
+      <h3>Visión</h3>
+      <p>
+        Ser una institución reconocida por impulsar el aprendizaje
+        constructivo y humano en cada alumno.
+      </p>
+    </div>
 
-## Tecnologías
+    <div class="card">
+      <h3>Valores</h3>
+      <p>
+        Respeto, empatía, creatividad, responsabilidad y amor por el
+        aprendizaje.
+      </p>
+    </div>
+  </div>
+</section>
 
-- HTML5
-- CSS3 (Flexbox, Grid, Media Queries)
-- JavaScript Vanilla
+<section id="historia" class="section">
+  <h2>Historia</h2>
 
-## Autor
+  <p>
+    Kid's College nació con la intención de crear un espacio educativo
+    diferente, enfocado en el desarrollo emocional, intelectual y creativo
+    de cada niño.
+  </p>
+</section>
 
-Alejandro Salazar Ordaz
+<section id="oferta" class="section gray">
+  <h2>Oferta Educativa</h2>
 
----
+  <ul class="lista">
+    <li>Maternal</li>
+    <li>Preescolar</li>
+    <li>Actividades artísticas</li>
+    <li>Desarrollo emocional</li>
+    <li>Inglés</li>
+  </ul>
+</section>
 
-© 2026 Instituto de Monterrey - Kid's College
+<section id="inscripcion" class="section">
+  <h2>Inscripción</h2>
+
+  <p>
+    Las inscripciones están abiertas durante todo el año escolar.
+  </p>
+
+  <button class="secondary-btn">
+    Solicitar información
+  </button>
+</section>
+
+<section id="pago" class="section gray">
+  <h2>Pago de Colegiaturas</h2>
+
+  <p>
+    Contamos con diferentes métodos de pago para comodidad de las familias.
+  </p>
+</section>
+
+<section id="instalaciones" class="section">
+  <h2>Instalaciones</h2>
+
+  <div class="cards">
+    <div class="card">
+      <h3>Aulas</h3>
+      <p>Espacios diseñados para el aprendizaje activo.</p>
+    </div>
+
+    <div class="card">
+      <h3>Área de juegos</h3>
+      <p>Ambiente seguro y divertido para los niños.</p>
+    </div>
+
+    <div class="card">
+      <h3>Zona creativa</h3>
+      <p>Espacios para arte, música y desarrollo creativo.</p>
+    </div>
+  </div>
+</section>
+
+<section id="blog" class="section gray">
+  <h2>Blog</h2>
+
+  <div class="cards">
+    <div class="card">
+      <h3>Importancia del juego</h3>
+      <p>
+        El juego fortalece la creatividad y el aprendizaje natural.
+      </p>
+
+      <a href="importancia-del-juego.html">
+        <button class="secondary-btn">Leer más</button>
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Educación emocional</h3>
+      <p>
+        Aprender a reconocer emociones desde pequeños es fundamental.
+      </p>
+
+      <a href="https://alejandrosalazarordaz.github.io/Intituto/educacion-emocional.html">
+        <button class="secondary-btn">
+          Leer más
+        </button>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="ubicacion" class="section">
+  <h2>Ubicación</h2>
+
+  <p>
+    Monterrey, Nuevo León, México.
+  </p>
+</section>
+
+<section id="contacto" class="section gray">
+  <h2>Contacto</h2>
+
+  <form id="contactForm">
+    <input type="text" placeholder="Nombre" required>
+    <input type="email" placeholder="Correo electrónico" required>
+    <textarea placeholder="Mensaje"></textarea>
+
+    <button type="submit">Enviar</button>
+  </form>
+</section>
+
+<footer>
+  <p>
+    © 2026 Instituto de Monterrey - Kid's College
+  </p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
