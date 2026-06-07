@@ -250,5 +250,18 @@ sto: te edité solo el header para que también aparezcan tus redes sociales (Fa
 </footer>
 
 <script src="script.js"></script>
+<div class="social-fixed">
+  <a href="https://www.facebook.com/p/Instituto-Monterrey-61575657606439/?locale=es_LA"
+     target="_blank"
+     aria-label="Facebook">
+    Facebook
+  </a>
+
+  <a href="https://www.instagram.com/p/DXHOxuhiXYN/"
+     target="_blank"
+     aria-label="Instagram">
+    Instagram
+  </a>
+</div>
 </body>
 </html>
