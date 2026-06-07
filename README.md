@@ -17,6 +17,16 @@ sto: te edité solo el header para que también aparezcan tus redes sociales (Fa
   <div class="logo">
     <h1>Instituto de Monterrey</h1>
     <p>Kid's College</p>
+      <a href="https://www.facebook.com/p/Instituto-Monterrey-61575657606439/?locale=es_LA"
+       target="_blank"
+       aria-label="Facebook">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="https://www.instagram.com/p/DXHOxuhiXYN/"
+       target="_blank"
+       aria-label="Instagram">
+      <i class="fab fa-instagram"></i>
+    </a>
   </div>
 
   <nav>
