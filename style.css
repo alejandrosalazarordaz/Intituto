@@ -51,16 +51,17 @@ nav a:hover {
 }
 
 .hero {
-  height: 500px;
+  height: 100vh;
+  background-image: url("imagenes/colegio.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: white;
-}
-
-.overlay {
-  z-index: 1;
+  position: relative;
 }
 
 .hero h2 {
@@ -337,4 +338,12 @@ footer {
   .blog-post article h1 {
     font-size: 1.8rem;
   }
+}
+.overlay {
+  background: rgba(0, 0, 0, 0.55);
+  padding: 40px;
+  border-radius: 10px;
+  max-width: 800px;
+  color: white;
+  z-index: 1;
 }
