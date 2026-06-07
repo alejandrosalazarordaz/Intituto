@@ -6,15 +6,43 @@
     <title>Educación Emocional | Instituto de Monterrey - Kid's College</title>
     <link rel="stylesheet" href="style.css">
     <style>
+        .hero {
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            min-height: 400px;
+        }
+        
         .hero img {
             width: 100%;
             height: auto;
             display: block;
-            margin: 0;
         }
+        
         .hero .overlay {
-            position: relative;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
             z-index: 1;
+        }
+        
+        .hero .overlay h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        
+        .hero .overlay p {
+            font-size: 1.1em;
+            max-width: 600px;
         }
     </style>
 </head>
@@ -36,7 +64,7 @@
 </header>
 
 <section class="hero">
-    <img src="images/ninos-felices.jpg" alt="Niños felices y sonrientes">
+    <img src="https://concepto.de/wp-content/uploads/2022/06/dia-del-nino-1536x768.jpg" alt="Niños felices y sonrientes">
     <div class="overlay">
         <h2>Educación Emocional</h2>
         <p>
