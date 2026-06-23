@@ -1,13 +1,3 @@
-Sí, hay un conflicto. El problema es que tienes **dos listeners de click en los mismos links**:
-
-1. El primero al inicio del archivo atrapa **todos** los `a[href^="#"]` con `e.preventDefault()` y hace scroll
-2. El del buscador también agrega un listener — pero como el primero ya llamó `preventDefault()`, el `href` nativo nunca ejecuta
-
-Además, el listener del buscador en tu versión actual **no tiene** `e.preventDefault()` ni `scrollIntoView`, así que ninguno de los dos llega a navegar correctamente.
-
-Reemplaza tu `script.js` completo con esto:
-
-```javascript
 // Smooth scrolling para links normales del nav
 document.querySelectorAll('nav ul li a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
@@ -119,6 +109,3 @@ document.addEventListener('click', (e) => {
     dropdown.classList.remove('visible');
   }
 });
-```
-
-El cambio clave: el primer selector cambió de `a[href^="#"]` a `nav ul li a[href^="#"]` para que **no atrape los links del dropdown**, y el buscador ahora maneja su propio `preventDefault` + `scrollIntoView` de forma independiente.
