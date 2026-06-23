@@ -1,65 +1,60 @@
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+Sí, hay un conflicto. El problema es que tienes **dos listeners de click en los mismos links**:
+
+1. El primero al inicio del archivo atrapa **todos** los `a[href^="#"]` con `e.preventDefault()` y hace scroll
+2. El del buscador también agrega un listener — pero como el primero ya llamó `preventDefault()`, el `href` nativo nunca ejecuta
+
+Además, el listener del buscador en tu versión actual **no tiene** `e.preventDefault()` ni `scrollIntoView`, así que ninguno de los dos llega a navegar correctamente.
+
+Reemplaza tu `script.js` completo con esto:
+
+```javascript
+// Smooth scrolling para links normales del nav
+document.querySelectorAll('nav ul li a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     e.preventDefault();
     const target = document.querySelector(this.getAttribute('href'));
     if (target) {
-      target.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   });
 });
 
-// Handle "Conocer más" button
+// Botón "Conocer más"
 document.getElementById('btnInfo').addEventListener('click', function () {
-  document.getElementById('nosotros').scrollIntoView({
-    behavior: 'smooth',
-    block: 'start'
-  });
+  document.getElementById('nosotros').scrollIntoView({ behavior: 'smooth', block: 'start' });
 });
 
-// Handle contact form submission
+// Formulario de contacto
 document.getElementById('contactForm').addEventListener('submit', function (e) {
   e.preventDefault();
-  
   const nombre = this.querySelector('input[type="text"]').value;
   const email = this.querySelector('input[type="email"]').value;
   const mensaje = this.querySelector('textarea').value;
-  
-  // Validate fields
   if (nombre && email && mensaje) {
-    // Show success message
     alert(`Gracias ${nombre}, tu mensaje ha sido enviado. Nos pondremos en contacto pronto.`);
-    
-    // Reset form
     this.reset();
   } else {
     alert('Por favor completa todos los campos.');
   }
 });
 
-// Optional: Add active link highlighting based on scroll position
+// Resaltar link activo al hacer scroll
 window.addEventListener('scroll', function () {
   let current = '';
-  const sections = document.querySelectorAll('section[id]');
-  
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop;
-    const sectionHeight = section.clientHeight;
-    if (pageYOffset >= sectionTop - 200) {
+  document.querySelectorAll('section[id]').forEach(section => {
+    if (pageYOffset >= section.offsetTop - 200) {
       current = section.getAttribute('id');
     }
   });
-  
-  document.querySelectorAll('nav a').forEach(link => {
+  document.querySelectorAll('nav ul li a').forEach(link => {
     link.classList.remove('active');
-    if (link.getAttribute('href').slice(1) === current) {
+    if (link.getAttribute('href') === '#' + current) {
       link.classList.add('active');
     }
   });
 });
+
+// ── BUSCADOR ──
 const searchIndex = [
   { title: "Nosotros", href: "#nosotros", desc: "Propósito, educación centrada en el niño" },
   { title: "Filosofía – Misión", href: "#filosofia", desc: "Formar niños seguros, creativos y autónomos" },
@@ -82,11 +77,11 @@ const searchIndex = [
   { title: "Contacto", href: "#contacto", desc: "Envíanos un mensaje" },
 ];
 
-const input = document.getElementById('navSearch');
+const searchInput = document.getElementById('navSearch');
 const dropdown = document.getElementById('searchResults');
 
-input.addEventListener('input', () => {
-  const q = input.value.trim().toLowerCase();
+searchInput.addEventListener('input', () => {
+  const q = searchInput.value.trim().toLowerCase();
   dropdown.innerHTML = '';
 
   if (!q) {
@@ -105,8 +100,11 @@ input.addEventListener('input', () => {
     matches.forEach(item => {
       const li = document.createElement('li');
       li.innerHTML = `<a href="${item.href}">${item.title}<span>${item.desc}</span></a>`;
-      li.querySelector('a').addEventListener('click', () => {
-        input.value = '';
+      li.querySelector('a').addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.querySelector(item.href);
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        searchInput.value = '';
         dropdown.classList.remove('visible');
       });
       dropdown.appendChild(li);
@@ -121,3 +119,6 @@ document.addEventListener('click', (e) => {
     dropdown.classList.remove('visible');
   }
 });
+```
+
+El cambio clave: el primer selector cambió de `a[href^="#"]` a `nav ul li a[href^="#"]` para que **no atrape los links del dropdown**, y el buscador ahora maneja su propio `preventDefault` + `scrollIntoView` de forma independiente.
