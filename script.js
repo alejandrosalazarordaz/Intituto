@@ -79,6 +79,7 @@ function iniciarSitio() {
         const email = this.querySelector('input[type="email"]').value;
         const mensaje = this.querySelector('textarea').value;
         if (nombre && email && mensaje) {
+          lanzarConfeti();
           alert(`Gracias ${nombre}, tu mensaje ha sido enviado. Nos pondremos en contacto pronto.`);
           this.reset();
         } else {
@@ -249,4 +250,42 @@ function iniciarSitio() {
     console.error('Error en botón de mantenimiento:', err);
   }
 
+}
+
+// ══════════════════════════════════════
+// MINI-PLUGIN: CONFETI 🎉
+// Se dispara al enviar el formulario de contacto con éxito.
+// Hecho en JavaScript puro, sin librerías externas.
+// ══════════════════════════════════════
+function lanzarConfeti() {
+  const colores = ['#667eea', '#764ba2', '#1D9E75', '#f4c542', '#e0575b'];
+  const cantidad = 120;
+
+  for (let i = 0; i < cantidad; i++) {
+    const pieza = document.createElement('div');
+    pieza.className = 'confetti-pieza';
+
+    const color = colores[Math.floor(Math.random() * colores.length)];
+    const tamano = Math.random() * 8 + 6; // 6px a 14px
+    const izquierda = Math.random() * 100; // posición horizontal en %
+    const retraso = Math.random() * 0.4; // segundos
+    const duracion = Math.random() * 1.5 + 2; // 2 a 3.5 segundos
+    const rotacionFinal = Math.random() * 720 - 360;
+    const derivaHorizontal = (Math.random() - 0.5) * 200; // px
+
+    pieza.style.setProperty('--color', color);
+    pieza.style.setProperty('--tamano', `${tamano}px`);
+    pieza.style.setProperty('--izquierda', `${izquierda}vw`);
+    pieza.style.setProperty('--retraso', `${retraso}s`);
+    pieza.style.setProperty('--duracion', `${duracion}s`);
+    pieza.style.setProperty('--rotacion-final', `${rotacionFinal}deg`);
+    pieza.style.setProperty('--deriva-x', `${derivaHorizontal}px`);
+
+    document.body.appendChild(pieza);
+
+    // Limpieza: elimina la pieza del DOM cuando termina su animación
+    setTimeout(() => {
+      pieza.remove();
+    }, (retraso + duracion) * 1000 + 100);
+  }
 }
