@@ -533,3 +533,248 @@ footer {
     font-size: 1.8rem;
   }
 }
+
+/* ══════════════════════════════════════
+   MODO OSCURO
+   ══════════════════════════════════════ */
+body.dark {
+  background: #121212;
+  color: #e0e0e0;
+}
+
+body.dark header {
+  background: #1a1a1a;
+  border-bottom-color: rgba(255,255,255,0.1);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+body.dark .nav-top {
+  border-bottom-color: rgba(255,255,255,0.08);
+}
+
+body.dark .logo-text h1 {
+  color: #f0f0f0;
+}
+
+body.dark .logo-text p {
+  color: #aaa;
+}
+
+body.dark .nav-social a {
+  border-color: #444;
+  color: #ccc;
+}
+
+body.dark .nav-social a:hover {
+  background: #2a2a2a;
+  color: #fff;
+}
+
+body.dark nav ul li a {
+  color: #ccc;
+}
+
+body.dark nav ul li a:hover {
+  background: #2a2a2a;
+  color: #fff;
+}
+
+body.dark #navSearch {
+  background: #2a2a2a;
+  border-color: #444;
+  color: #eee;
+}
+
+body.dark #navSearch:focus {
+  background: #333;
+}
+
+body.dark .search-dropdown {
+  background: #1e1e1e;
+  border-color: #444;
+}
+
+body.dark .search-dropdown li a {
+  color: #ddd !important;
+}
+
+body.dark .search-dropdown li a:hover {
+  background: #2a2a2a !important;
+  color: #4fd1a5 !important;
+}
+
+body.dark .section.gray {
+  background: #1a1a1a;
+}
+
+body.dark .section h2 {
+  color: #8ea2f1;
+}
+
+body.dark .card {
+  background: #1e1e1e;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+body.dark .card h3 {
+  color: #b28ce0;
+}
+
+body.dark .card p,
+body.dark .section p {
+  color: #ccc;
+}
+
+body.dark input,
+body.dark textarea {
+  background: #1e1e1e;
+  border-color: #444;
+  color: #eee;
+}
+
+body.dark footer {
+  background: #0a0a0a;
+}
+
+/* Botón flotante de modo oscuro */
+#darkToggle {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 999;
+  background: #333;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  transition: transform 0.2s, background 0.3s;
+}
+
+#darkToggle:hover {
+  transform: scale(1.08);
+  background: #555;
+}
+
+/* ══════════════════════════════════════
+   WHATSAPP FLOTANTE
+   ══════════════════════════════════════ */
+#whatsappBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  text-decoration: none;
+  z-index: 999;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  transition: transform 0.2s;
+}
+
+#whatsappBtn:hover {
+  transform: scale(1.08);
+}
+
+.whatsapp-popup {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 12px 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  max-width: 220px;
+  z-index: 998;
+  display: none;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.whatsapp-popup.show {
+  display: flex;
+}
+
+.whatsapp-popup p {
+  margin: 0;
+  flex: 1;
+  text-align: left;
+}
+
+.whatsapp-popup #closePopup {
+  background: transparent;
+  color: #999;
+  padding: 0;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.whatsapp-popup #closePopup:hover {
+  color: #333;
+  background: transparent;
+}
+
+body.dark .whatsapp-popup {
+  background: #1e1e1e;
+  border-color: #444;
+  color: #eee;
+}
+
+/* ══════════════════════════════════════
+   MODO MANTENIMIENTO
+   ══════════════════════════════════════ */
+.maintenance-screen {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: #fff3e0;
+  padding: 20px;
+}
+
+.maintenance-screen h1 {
+  font-size: 2.2rem;
+  color: #764ba2;
+  margin-bottom: 1rem;
+}
+
+.maintenance-screen p {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 500px;
+}
+
+/* Responsive extra para los flotantes en móvil */
+@media (max-width: 480px) {
+  #darkToggle,
+  #whatsappBtn {
+    width: 46px;
+    height: 46px;
+    font-size: 18px;
+  }
+
+  .whatsapp-popup {
+    right: 12px;
+    bottom: 80px;
+    max-width: 180px;
+  }
+}
