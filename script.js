@@ -80,10 +80,10 @@ function iniciarSitio() {
         const mensaje = this.querySelector('textarea').value;
         if (nombre && email && mensaje) {
           lanzarConfeti();
-          alert(`Gracias ${nombre}, tu mensaje ha sido enviado. Nos pondremos en contacto pronto.`);
+          mostrarToast(`Gracias ${nombre}, tu mensaje ha sido enviado. Nos pondremos en contacto pronto.`);
           this.reset();
         } else {
-          alert('Por favor completa todos los campos.');
+          mostrarToast('Por favor completa todos los campos.', true);
         }
       });
     }
@@ -250,6 +250,28 @@ function iniciarSitio() {
     console.error('Error en botón de mantenimiento:', err);
   }
 
+}
+
+// ══════════════════════════════════════
+// MINI-PLUGIN: TOAST (mensaje flotante no bloqueante)
+// Reemplaza al alert() clásico, que congelaba la página y no dejaba
+// ver animaciones como el confeti.
+// ══════════════════════════════════════
+function mostrarToast(mensaje, esError = false) {
+  const toast = document.createElement('div');
+  toast.className = 'toast-mensaje' + (esError ? ' toast-error' : '');
+  toast.textContent = mensaje;
+  document.body.appendChild(toast);
+
+  // Forzar reflow para que la transición de entrada funcione
+  requestAnimationFrame(() => {
+    toast.classList.add('toast-visible');
+  });
+
+  setTimeout(() => {
+    toast.classList.remove('toast-visible');
+    setTimeout(() => toast.remove(), 400);
+  }, 3500);
 }
 
 // ══════════════════════════════════════
