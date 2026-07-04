@@ -4,54 +4,75 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Instituto de Monterrey - Kid's College</title>
+
+  <!-- SEO básico -->
+  <meta name="description" content="Instituto de Monterrey - Kid's College. Educación preescolar y maternal centrada en el niño, con enfoque constructivo y humano en Monterrey, Nuevo León.">
+  <meta name="keywords" content="kinder monterrey, preescolar monterrey, maternal, educacion infantil, instituto de monterrey">
+  <meta name="author" content="Instituto de Monterrey - Kid's College">
+  <link rel="canonical" href="https://alejandrosalazarordaz.github.io/Intituto/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Instituto de Monterrey - Kid's College">
+  <meta property="og:description" content="Educación centrada en el niño. Maternal, preescolar e inglés en Monterrey.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://alejandrosalazarordaz.github.io/Intituto/">
+  <meta property="og:locale" content="es_MX">
+
+  <!-- Datos estructurados -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "School",
+    "name": "Instituto de Monterrey - Kid's College",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Monterrey",
+      "addressRegion": "Nuevo León",
+      "addressCountry": "MX"
+    }
+  }
+  </script>
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-  <div class="nav-top">
-    <div class="logo-wrap">
-      <div class="logo-icon">🎒</div>
-      <div class="logo-text">
-        <h1>Instituto de Monterrey</h1>
-        <p>Kid's College</p>
-      </div>
-    </div>
-    <div class="nav-social">
-      <a href="https://www.facebook.com/p/Instituto-Monterrey-61575657606439/?locale=es_LA"
-         target="_blank" aria-label="Facebook">
-        Facebook
-      </a>
-      <a href="https://www.instagram.com/p/DXHOxuhiXYN/"
-         target="_blank" aria-label="Instagram">
-        Instagram
-      </a>
-    </div>
+  <div class="logo">
+    <h1>Instituto de Monterrey</h1>
+    <p>Kid's College</p>
+    <div class="social-fixed">
+  <a href="https://www.facebook.com/p/Instituto-Monterrey-61575657606439/?locale=es_LA"
+     target="_blank"
+     aria-label="Facebook">
+    Facebook
+  </a>
+
+  <a href="https://www.instagram.com/p/DXHOxuhiXYN/"
+     target="_blank"
+     aria-label="Instagram">
+    Instagram
+  </a>
+</div>
   </div>
 
   <nav>
-  <ul>
-    <li><a href="#inicio">Inicio</a></li>
-    <li><a href="#nosotros">Nosotros</a></li>
-    <li><a href="#filosofia">Filosofía</a></li>
-    <li><a href="#historia">Historia</a></li>
-    <li><a href="#oferta">Oferta Educativa</a></li>
-    <li><a href="#instalaciones">Instalaciones</a></li>
-    <li><a href="#blog">Blog</a></li>
-    <li><a href="#ubicacion">Ubicación</a></li>
-    <li><a href="#contacto">Contacto</a></li>
-    <li><a href="#inscripcion" class="cta-btn">Inscripción</a></li>
-
-    <!-- BUSCADOR -->
-    <li class="nav-search-wrap">
-      <input type="text" id="navSearch" placeholder="Buscar..." autocomplete="off" />
-      <ul id="searchResults" class="search-dropdown"></ul>
-    </li>
-  </ul>
-</nav>
-  
+    <ul>
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#filosofia">Filosofía</a></li>
+      <li><a href="#historia">Historia</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#oferta">Oferta Educativa</a></li>
+      <li><a href="#inscripcion">Inscripción</a></li>
+      <li><a href="#pago">Colegiaturas</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+      <li><a href="#ubicacion">Ubicación</a></li>
+      <li><a href="#instalaciones">Instalaciones</a></li>
+      <li><a href="#blog">Blog</a></li>
+    </ul>
+  </nav>
 </header>
-  
+
 <section class="hero" id="inicio">
   <div class="overlay">
     <h2>Educación centrada en el niño</h2>
@@ -239,6 +260,22 @@
     © 2026 Instituto de Monterrey - Kid's College
   </p>
 </footer>
+
+<!-- Botón de modo oscuro -->
+<button id="darkToggle" aria-label="Modo oscuro">🌙</button>
+
+<!-- Popup y botón de WhatsApp -->
+<div id="whatsappPopup" class="whatsapp-popup">
+  <p>👋 ¿Tienes dudas? ¡Escríbenos por WhatsApp!</p>
+  <button id="closePopup">✕</button>
+</div>
+
+<a href="https://wa.me/528100000000?text=Hola,%20quiero%20más%20información%20sobre%20el%20Instituto%20de%20Monterrey"
+   target="_blank"
+   id="whatsappBtn"
+   aria-label="WhatsApp">
+   💬
+</a>
 
 <script src="script.js"></script>
 </body>
