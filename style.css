@@ -810,3 +810,35 @@ body.dark .admin-maintenance-btn {
     max-width: 180px;
   }
 }
+
+/* ══════════════════════════════════════
+   MINI-PLUGIN: CONFETI 🎉
+   ══════════════════════════════════════ */
+.confetti-pieza {
+  position: fixed;
+  top: -20px;
+  left: var(--izquierda);
+  width: var(--tamano);
+  height: var(--tamano);
+  background: var(--color);
+  border-radius: 2px;
+  z-index: 10000;
+  pointer-events: none;
+  opacity: 0.95;
+  animation: caerConfeti var(--duracion) ease-in var(--retraso) forwards;
+}
+
+.confetti-pieza:nth-child(odd) {
+  border-radius: 50%;
+}
+
+@keyframes caerConfeti {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--deriva-x), 100vh) rotate(var(--rotacion-final));
+    opacity: 0.3;
+  }
+}
