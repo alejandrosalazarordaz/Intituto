@@ -749,18 +749,50 @@ body.dark .whatsapp-popup {
   text-align: center;
   background: #fff3e0;
   padding: 20px;
+  gap: 1rem;
 }
 
 .maintenance-screen h1 {
   font-size: 2.2rem;
   color: #764ba2;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .maintenance-screen p {
   font-size: 1.1rem;
   color: #555;
   max-width: 500px;
+}
+
+.maintenance-exit-btn {
+  margin-top: 1rem;
+  background: #667eea;
+  font-size: 0.9rem;
+  padding: 0.6rem 1.4rem;
+}
+
+.maintenance-exit-btn:hover {
+  background: #764ba2;
+}
+
+/* Botón admin en el footer para activar mantenimiento (solo pruebas locales) */
+.admin-maintenance-btn {
+  margin-top: 1rem;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.3);
+  color: rgba(255,255,255,0.6);
+  font-size: 0.75rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 20px;
+}
+
+.admin-maintenance-btn:hover {
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+}
+
+body.dark .admin-maintenance-btn {
+  border-color: rgba(255,255,255,0.2);
 }
 
 /* Responsive extra para los flotantes en móvil */
